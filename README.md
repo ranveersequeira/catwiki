@@ -1,7 +1,7 @@
 # catwiki
 
-![HomePage](https://ibb.co/qxJRpF3)
+![HomePage](./fullpage.png)
 
 ## Search List
 
-![HomePage with Search](https://ibb.co/pLgr12G)
+![HomePage with Search](./scroll.png)
