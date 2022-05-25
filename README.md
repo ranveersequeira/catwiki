@@ -11,18 +11,18 @@
 5. Select and Run
 
 ### HomePage Top
-![Top](https://ibb.co/HpbJ9yj)
+![Top](./topbar.png)
 
 ### HomePage Bottom
-![Bottom](https://ibb.co/xFYFmFC)
+![Bottom](./bottombar.png)
 
 
 ### HomePage with Search
-![HomePage](https://ibb.co/zNVWNt6)
+![HomePage](./searchbar.png)
 
 ### Cat Detail Page
 
-![Cat Detail Page](https://ibb.co/tc03sm0)
+![Cat Detail Page](./catinfo.png)
 
 
 ##For More images - [gdrive](https://drive.google.com/drive/folders/1APIYsIZTFpgG0RmC6EQrQqAPXwh8dljs?usp=sharing)
