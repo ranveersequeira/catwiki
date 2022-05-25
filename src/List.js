@@ -7,21 +7,26 @@ import {
     ScrollView,
     TouchableOpacity
 } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
-const Item = ({ name, navigation }) => (
-    <TouchableOpacity style={styles.item} >
-        <Text style={styles.title} >{name}</Text>
-    </TouchableOpacity>
-);
+
+const Item = ({ name }) => {
+    let navigation = useNavigation();
+    return (
+        <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Cat', { catName: name })}>
+            <Text style={styles.title} >{name}</Text>
+        </TouchableOpacity>
+    )
+}
 
 
 export default function List({ searchPhrase, setCLicked, data, navigation }) {
     const renderItem = ({ item, navigation }) => {
         if (searchPhrase === "") {
-            return <Item name={item.name} navigation={navigation} />;
+            return <Item name={item.name} />;
         }
         if (item.name.toUpperCase().includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))) {
-            return <Item name={item.name} navigation={navigation} />;
+            return <Item name={item.name} />;
         }
 
     };

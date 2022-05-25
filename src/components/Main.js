@@ -62,10 +62,10 @@ export default function Main({ navigation }) {
                 </View>}
             {!clicked &&
                 <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around', width: '100%' }} >
-                    <TouchableOpacity onPress={() => navigation.navigate('Cat', { catName: 'Norwwgian Forest Cat' })}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Cat', { catName: 'Ragdoll' })}>
                         <Image source={{ uri: 'https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462__340.jpg' }}
                             style={{ width: 150, height: 200, borderRadius: 30 }} />
-                        <Text style={styles.name}>Norwwgian {"\n"}Forest Cat</Text>
+                        <Text style={styles.name}>Ragdoll </Text>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Cat', { catName: 'Selkirk Rex' })}>
                         <Image source={{ uri: 'https://cdn.pixabay.com/photo/2014/05/07/06/44/cat-339400__340.jpg' }}

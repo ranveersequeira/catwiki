@@ -1,14 +1,24 @@
-import { Text, View, StyleSheet, ScrollView, Dimensions, Image, FlatList } from 'react-native'
-import React, { useState, useEffect } from 'react'
-import { APPICON } from '../../App'
+import { Text, View, StyleSheet, ScrollView, Dimensions, Image, FlatList, TouchableOpacity, Linking } from 'react-native'
+import React, { useCallback } from 'react'
 import Footer from '../components/Footer'
 import Main from '../components/Main'
 
+const supportedURL = "https://www.helpguide.org/articles/healthy-living/joys-of-owning-a-cat.htm#:~:text=The%20health%20benefits%20of%20cats&text=They%20can%3A,and%20lower%20your%20blood%20pressure.";
+
+const OpenURLButton = ({ url }) => {
+    const handlePress = useCallback(async () => {
+        const supported = await Linking.canOpenURL(url);
+        if (supported) {
+            await Linking.openURL(url);
+        } else {
+            Alert.alert(`Don't know how to open this URL: ${url}`);
+        }
+    }, [url]);
+
+    return <TouchableOpacity onPress={handlePress} ><Text style={styles.read}>READ MORE {"-->"} </Text></TouchableOpacity>;
+};
 
 export function Home({ navigation }) {
-
-
-
 
     return (
         <ScrollView style={styles.mainContainer}>
@@ -22,7 +32,7 @@ export function Home({ navigation }) {
                     <Text style={styles.info}>
                         Having a cat around you can actually trigger the release of calming chemicals in your body which lower your stress and anxiety levels
                     </Text>
-                    <Text style={styles.read}>READ MORE  </Text>
+                    <OpenURLButton url={supportedURL}></OpenURLButton>
                 </View>
 
                 <View style={{ flex: 1, flexDirection: 'row' }}>
